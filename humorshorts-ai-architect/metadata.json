@@ -1,0 +1,8 @@
+{
+  "name": "HumorShorts AI Architect",
+  "description": "A high-performance generator for 16-second humor shorts. It analyzes inputs via Google Search grounding to create trend-aligned scripts and visual prompts.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}

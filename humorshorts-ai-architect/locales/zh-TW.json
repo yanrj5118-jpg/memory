@@ -1,0 +1,42 @@
+{
+  "app": {
+    "title": "幽默短影音",
+    "titleAccent": "AI 架構師",
+    "description": "輸入您的媒體內容。我們透過研究和算法分析製作完美的 16 秒病毒式傳播劇本。",
+    "footer": "© 2024 幽默短影音 AI 架構師。提供專業級内容策略。"
+  },
+  "input": {
+    "tabs": {
+      "text": "文字",
+      "url": "網址(URL)",
+      "file": "檔案上傳"
+    },
+    "placeholders": {
+      "text": "輸入想法、幽默場景或參考文本...",
+      "url": "在這裡貼上 YouTube 或 TikTok 連結...",
+      "file": "點擊或拖拽圖像或影片",
+      "fileHint": "TikTok、短影音風格的短片最有效"
+    },
+    "button": "運行短影音架構師"
+  },
+  "status": {
+    "analyzing": "深度幽默分析進行中...",
+    "scanning": "掃描病毒趨勢並構思笑點",
+    "error": "生成內容失敗。請稍後再試。",
+    "retry": "重試"
+  },
+  "result": {
+    "trendAnalysis": "趨勢分析",
+    "variation": "變體",
+    "humorPoint": "幽默點",
+    "visualPrompt": "視覺提示詞",
+    "copy": "複製",
+    "copied": "已複製!",
+    "reset": "開始新專案",
+    "model": {
+      "selection": "模型選擇",
+      "fast": "快速模式 (e2b)",
+      "deep": "深度分析 (e4b)"
+    }
+  }
+}
