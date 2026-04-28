@@ -1,0 +1,42 @@
+{
+  "app": {
+    "title": "HumorShorts",
+    "titleAccent": "AI Architect",
+    "description": "Enter your media. We create the perfect 16-second viral script through research and algorithmic analysis.",
+    "footer": "© 2024 HumorShorts AI Architect. Providing professional-grade content strategies."
+  },
+  "input": {
+    "tabs": {
+      "text": "Text",
+      "url": "URL",
+      "file": "File Upload"
+    },
+    "placeholders": {
+      "text": "Enter ideas, humor situations, or reference text...",
+      "url": "Paste YouTube or TikTok URL here...",
+      "file": "Click or drag images or videos",
+      "fileHint": "TikTok/Shorts style short videos are most effective"
+    },
+    "button": "Run Shorts Architect"
+  },
+  "status": {
+    "analyzing": "Deep humor analysis in progress...",
+    "scanning": "Scanning viral trends and composing punchlines",
+    "error": "Failed to generate content. Please try again later.",
+    "retry": "Try Again"
+  },
+  "result": {
+    "trendAnalysis": "Trend Analysis",
+    "variation": "Variation",
+    "humorPoint": "Humor Point",
+    "visualPrompt": "Visual Prompt",
+    "copy": "Copy",
+    "copied": "Copied!",
+    "reset": "Start New Project",
+    "model": {
+      "selection": "Model Selection",
+      "fast": "Fast Mode (e2b)",
+      "deep": "Deep Analysis (e4b)"
+    }
+  }
+}
