@@ -31,9 +31,47 @@ def _resolve_channel_id(youtube, handle, channel_id):
         print(f"⚠️  채널 ID 조회 실패: {e}")
     return None
 
-def _push_telegram(account, text):
+def _resolve_telegram(account):
+    """telegram_v3 — Secretary's tools/telegram_setup.json is the canonical
+    UI-managed home (input via Skills ⚙️). Fallback chain:
+      1) youtube_account.json (this tool's local override, back-compat)
+      2) _agents/secretary/tools/telegram_setup.json (UI-managed, canonical)
+      3) _agents/secretary/config.md (legacy markdown, back-compat)
+    """
+    import re, json as _json
     token = (account.get("TELEGRAM_BOT_TOKEN") or "").strip()
     chat  = (account.get("TELEGRAM_CHAT_ID") or "").strip()
+    if token and chat:
+        return token, chat
+    brain_root = os.path.abspath(os.path.join(HERE, "..", "..", ".."))
+    # 2) Secretary's tool JSON
+    sec_json = os.path.join(brain_root, "_agents", "secretary", "tools", "telegram_setup.json")
+    if (not token or not chat) and os.path.exists(sec_json):
+        try:
+            with open(sec_json, "r", encoding="utf-8") as f:
+                cfg = _json.load(f)
+            if not token: token = (cfg.get("TELEGRAM_BOT_TOKEN") or "").strip()
+            if not chat:  chat  = (cfg.get("TELEGRAM_CHAT_ID") or "").strip()
+        except Exception:
+            pass
+    # 3) Legacy config.md
+    sec_cfg = os.path.join(brain_root, "_agents", "secretary", "config.md")
+    if (not token or not chat) and os.path.exists(sec_cfg):
+        try:
+            with open(sec_cfg, "r", encoding="utf-8") as f:
+                txt = f.read()
+            if not token:
+                m = re.search(r"TELEGRAM_BOT_TOKEN\s*[:：=]\s*([A-Za-z0-9:_\-]+)", txt)
+                if m: token = m.group(1).strip()
+            if not chat:
+                m = re.search(r"TELEGRAM_CHAT_ID\s*[:：=]\s*(-?\d+)", txt)
+                if m: chat = m.group(1).strip()
+        except Exception:
+            pass
+    return token, chat
+
+def _push_telegram(account, text):
+    token, chat = _resolve_telegram(account)
     if not token or not chat:
         return
     try:
