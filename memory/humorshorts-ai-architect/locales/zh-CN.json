@@ -1,0 +1,42 @@
+{
+  "app": {
+    "title": "幽默短视频",
+    "titleAccent": "AI 架构师",
+    "description": "输入您的媒体内容。我们通过研究和算法分析制作完美的 16 秒爆款剧本。",
+    "footer": "© 2024 幽默短视频 AI 架构师。提供专业级内容策略。"
+  },
+  "input": {
+    "tabs": {
+      "text": "文本",
+      "url": "网址(URL)",
+      "file": "文件上传"
+    },
+    "placeholders": {
+      "text": "输入想法、幽默场景或参考文本...",
+      "url": "在此粘贴 YouTube 或 TikTok 链接...",
+      "file": "点击或拖拽图像/视频",
+      "fileHint": "TikTok、短视频风格的片段效果最佳"
+    },
+    "button": "生成 16s 爆款剧本"
+  },
+  "status": {
+    "analyzing": "深度幽默分析中...",
+    "scanning": "正在扫描爆款趋势并构思笑点...",
+    "error": "内容生成失败。请稍后再试。",
+    "retry": "重试"
+  },
+  "result": {
+    "trendAnalysis": "爆款趋势分析",
+    "variation": "创意变体",
+    "humorPoint": "核心笑点",
+    "visualPrompt": "画面提示词",
+    "copy": "复制剧本",
+    "copied": "复制成功!",
+    "reset": "开启新项目",
+    "model": {
+      "selection": "模型选择",
+      "fast": "快速模式 (e2b)",
+      "deep": "深度模式 (e4b)"
+    }
+  }
+}
